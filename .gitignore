@@ -37,5 +37,6 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+
+build/
+CMakeUserPresets.json
