@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(arena VERSION 0.1.0 LANGUAGES CXX)
+project(template-cxx VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,11 +10,7 @@ set(TEST_TARGET_NAME ${PROJECT_NAME}_test)
 set(BENCH_TARGET_NAME ${PROJECT_NAME}_bench)
 set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-set(HEADERS
-  "include/arena/vector.hpp"
-  "include/arena/base_book_map.hpp"
-  "include/arena/base_book_vector.hpp"
-  "include/arena/probe.hpp")
+set(HEADERS)
 
 set(GCC_OPTIONS -Wall -Wextra -Wpedantic -fmax-errors=1)
 set(CLANG_OPTIONS -Wall -Wextra -Wpedantic -ferror-limit=1)
