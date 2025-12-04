@@ -1,5 +1,7 @@
 [requires]
+doctest/[*]
 fmt/[*]
+nanobench/[*]
 
 [generators]
 CMakeDeps
