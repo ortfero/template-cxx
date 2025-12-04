@@ -5,4 +5,3 @@
 #include <doctest/doctest.h>
 
 #define TEMPLATE_CXX_ENABLE_BENCH
-

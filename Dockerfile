@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 
+ARG PROJECT=template-cxx
 FROM ghcr.io/void-linux/void-musl-busybox:latest AS build
 
 RUN xbps-install -Sy xbps && xbps-install -Syu
@@ -20,10 +21,10 @@ RUN conan install . \
     --build=missing \
     --output-folder=.
 RUN cmake --preset conan-relwithdebinfo
-RUN cmake --build --preset conan-relwithdebinfo --target template-cxx
+RUN cmake --build --preset conan-relwithdebinfo --target $PROJECT
 
 FROM ghcr.io/void-linux/void-musl-busybox:latest AS runtime
 RUN xbps-install -Sy xbps && xbps-install -Syu
 RUN xbps-install -Sy libstdc++ libgcc
-COPY --from=build /app/build/RelWithDebInfo/template-cxx /usr/local/bin/template-cxx
-ENTRYPOINT ["template-cxx"]
+COPY --from=build /app/build/RelWithDebInfo/$PROJECT /usr/local/bin/$PROJECT
+ENTRYPOINT ["$PROJECT"]

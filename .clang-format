@@ -1,8 +1,7 @@
 ﻿---
 BasedOnStyle: LLVM
 
-# Общее
-Standard: Cpp20
+Standard: c++20
 UseTab: Never
 IndentWidth: 4
 TabWidth: 4
@@ -19,7 +18,7 @@ AllowAllArgumentsOnNextLine: false
 AllowAllConstructorInitializersOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: false
 
-AllowShortBlocksOnASingleLine: false
+AllowShortBlocksOnASingleLine: Always
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: Never
